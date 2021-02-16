@@ -2,10 +2,10 @@
 #define STUDENT_H
 
 #include "degree.h"
-
+using namespace std;
 
 class Student {
-private
+private:
     string studentID;
 	string firstName;
 	string lastName;
@@ -15,10 +15,10 @@ private
 	DegreeProgram degree;
 
 public:
-    Student(string, string, string, string, int, int numDays[3], DegreeProgram);
-        ~Student();
+    Student(string , string , string , string , int , int numofDays[] , DegreeProgram degree);
+            ~Student();
 
-         //SETTERS
+    //  MUTATORS - SETTERS  //
     void setStudentId(string);
     void setFirstName(string);
     void setLastName(string);
@@ -27,7 +27,7 @@ public:
     void setNumOfDays(int*);
     void setDegree(DegreeProgram);
 
-           //GETTERS
+    //  ACCESSORS - GETTERS  //
     string getStudentId()const;
     string getFirstName()const;
     string getLastName()const;

@@ -1,10 +1,11 @@
 #ifndef DEGREE_H
 #define DEGREE_H
 
-enum DegreeProgram
-{
+enum DegreeProgram {
     SECURITY,
-    NETWORKING,
+    NETWORK,
     SOFTWARE
-};
+    };
+
+
 #endif // DEGREE_H
