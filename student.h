@@ -1,6 +1,6 @@
-#ifndef STUDENT_H
-#define STUDENT_H
-
+#pragma once
+#include <iostream>
+#include <string>
 #include "degree.h"
 using namespace std;
 
@@ -15,26 +15,34 @@ private:
 	DegreeProgram degree;
 
 public:
-    Student(string , string , string , string , int , int numofDays[] , DegreeProgram degree);
+
+    //Student Constructor
+    Student(string , string , string , string , int , int numOfDays[], int arraySz, DegreeProgram degree);
             ~Student();
 
     //  MUTATORS - SETTERS  //
-    void setStudentId(string);
+    void setStudentID(string);
     void setFirstName(string);
     void setLastName(string);
     void setEmailAddress(string);
     void setAge(int);
-    void setNumOfDays(int*);
-    void setDegree(DegreeProgram);
+    void setNumOfDays(int numOfDays[], int arraySz);
+
 
     //  ACCESSORS - GETTERS  //
-    string getStudentId()const;
-    string getFirstName()const;
-    string getLastName()const;
-    string getEmailAddress()const;
-    int getAge() const;
-    const int *NumOfDays()const;
+    string getStudentID();
+    string getFirstName();
+    string getLastName();
+    string getEmailAddress();
+    int getAge() ;
+    int *getNumOfDays();
 
+    //PRINTING
+	void print() {
+		return;
+	};
+	DegreeProgram getDegree() {
+		return degree;
+	};
 
 };
-#endif // STUDENT_H

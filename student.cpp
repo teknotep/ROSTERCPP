@@ -5,15 +5,18 @@
 
 using namespace std;
 
-//Student.cpp CONSTRUCTOR
-Student::Student(string stdID, string fstName, string lstName, string eml, int age, int days[3], DegreeProgram dgre){
-    setStudentId(stdID);
-    setFirstName(fstName);
-    setLastName(lstName);
-    setEmailAddress(eml);
-    setAge(age);
-    setNumOfDays(days);
-    setDegree(dgre);
+//No empty constructor(s)//
+// CONSTRUCTOR //
+Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int numOfDays[], int arraySz, DegreeProgram degree){
+    this->studentID = studentID;
+    this->firstName = firstName;
+    this->lastName = lastName;
+    this->emailAddress = emailAddress;
+    this->age = age;
+    for (int i = 0; i < 3; i++) {
+		this->numOfDays[i] = numOfDays[i];
+	}
+    this->degree = degree;
 };
 
 //DESTRUCT//
@@ -22,48 +25,44 @@ Student::~Student() {
     };
 
     //MUTATORS - SETTERS//
-void Student::setStudentId(string stdID) {
-            studentID = stdID;
+void Student::setStudentID(string studentID) {
+            studentID = studentID;
     };
-void Student::setFirstName(string fstName) {
-            firstName = fstName;
+void Student::setFirstName(string firstName) {
+            firstName = firstName;
     };
-void Student::setLastName(string lstName) {
-            lastName = lstName;
+void Student::setLastName(string lastName) {
+            lastName = lastName;
     };
-void Student::setEmailAddress(string eml) {
-            emailAddress = eml;
+void Student::setEmailAddress(string emailAddress) {
+            emailAddress = emailAddress;
     };
 void Student::setAge(int age) {
             age = age;
     };
-void Student::setNumOfDays(int* days) {
-            numOfDays = days;
-    };
-void Student::setDegree(DegreeProgram dgre) {
-            degree = dgre;
-    } ;
+void Student::setNumOfDays( int numOfDays[], int arraySz ) {
+	for (int i = 0; i < arraySz; ++i) {
+		this->numOfDays[i] = numOfDays[i];
+	}
+	 };
 
 
 //ACCESSORS - GETTERS//
-string Student::getStudentId() const {
-    return studentId;
+string Student::getStudentID()  {
+    return studentID;
 };
-string Student::getFirstName() const {
+string Student::getFirstName()  {
     return firstName;
 };
-string Student::getLastName() const {
+string Student::getLastName()  {
     return lastName;
 };
-string Student::getEmailAddress() const {
+string Student::getEmailAddress()  {
     return emailAddress;
 };
-int Student::getAge() const {
+int Student::getAge()  {
     return age;
 };
-int * Student::getNumOfDays() const {
+int *Student::getNumOfDays() {
     return numOfDays;
-};
-DegreeProgram Student::getDegree()  {
-    return degree;
 };

@@ -1,5 +1,4 @@
-#ifndef DEGREE_H
-#define DEGREE_H
+#pragma once
 
 enum DegreeProgram {
     SECURITY,
@@ -8,4 +7,4 @@ enum DegreeProgram {
     };
 
 
-#endif // DEGREE_H
+
